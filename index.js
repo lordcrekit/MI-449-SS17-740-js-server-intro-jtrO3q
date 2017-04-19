@@ -15,7 +15,7 @@ app.get('/', function(req, res) {
 
 var jokes = ['CSS', 'The english language', 'Donald Trump']
 app.get('/random-joke', function(req, res) {
-  res.send('<h1>'+jokes[Math.floor(Math.random()*jokes.length)]+'</h1>')
+  res.render('joke.ejs', {'joke': jokes[Math.floor(Math.random()*jokes.length)]})
 })
 
 app.get('/cuteness', function (req, res) {
