@@ -13,10 +13,13 @@ app.get('/', function(req, res) {
     res.send('hey xD')
 })
 
+var jokes = ['CSS', 'The english language', 'Donald Trump']
 app.get('/random-joke', function(req, res) {
+  res.send(jokes[Math.floor(Math.random()*jokes.length)])
 })
 
 app.get('/cuteness', function (req, res) {
+  res.render('cat.ejs', {})
 })
 
 app.get('*', function(req, res) {
