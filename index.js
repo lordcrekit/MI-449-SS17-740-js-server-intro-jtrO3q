@@ -9,12 +9,18 @@ app.use(express.static(__dirname + '/public'))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
 
-app.get('/', function(request, response) {
-    response.send('xD')
+app.get('/', function(req, res) {
+    res.send('hey xD')
 })
 
-app.get('/', function(req, res) {
-    res.send(cool())
+app.get('/random-joke', function(req, res) {
+})
+
+app.get('/cuteness', function (req, res) {
+})
+
+app.get('*', function(req, res) {
+  res.render('404.ejs', {'url': req.url })
 })
 
 app.listen(app.get('port'), function() {
