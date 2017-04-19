@@ -1,0 +1,9 @@
+{
+  "name": "MI-449-SS17-740-js-server-intro-jtrO3q",
+  "version": "1.0.0",
+  "description": "School project",
+  "main": "index.js",
+  "repository": "git@github.com:lordcrekit/MI-449-SS17-740-js-server-intro-jtrO3q.git",
+  "author": "William Norman <lordcrekit@gmail.com>",
+  "license": "GPL-3.0"
+}
