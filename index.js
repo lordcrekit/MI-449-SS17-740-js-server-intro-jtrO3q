@@ -10,12 +10,12 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'ejs')
 
 app.get('/', function(req, res) {
-    res.send('hey xD')
+    res.send('<h1>hey xD</h1>')
 })
 
 var jokes = ['CSS', 'The english language', 'Donald Trump']
 app.get('/random-joke', function(req, res) {
-  res.send(jokes[Math.floor(Math.random()*jokes.length)])
+  res.send('<h1>'+jokes[Math.floor(Math.random()*jokes.length)]+'</h1>')
 })
 
 app.get('/cuteness', function (req, res) {
