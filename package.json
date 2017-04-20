@@ -7,10 +7,12 @@
   "author": "William Norman <lordcrekit@gmail.com>",
   "license": "GPL-3.0",
   "scripts": {
+    "dev": "heroku local",
     "lint:js": "standard *.js",
     "lint:html": "ejslint views/*.ejs",
     "lint": "run-s lint:*",
-    "deploy": "git push heroku master"
+    "deploy:push": "git push heroku master",
+    "deploy": "run-s lint deploy:*"
   },
   "dependencies": {
     "ejs": "^2.5.6",
