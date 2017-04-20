@@ -1,31 +1,32 @@
 var express = require('express')
 var app = express()
+const path = require('path')
 
 app.set('port', (process.env.PORT || 5000))
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(path.resolve(__dirname, 'public')))
 
 // views is directory for all template files
-app.set('views', __dirname + '/views')
+app.set('views', path.resolve(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
-app.get('/', function(req, res) {
-    res.send('<h1>hey xD</h1>')
+app.get('/', function (req, res) {
+  res.send('<h1>hey xD</h1>')
 })
 
 var jokes = ['CSS', 'The english language', 'Donald Trump']
-app.get('/random-joke', function(req, res) {
-  res.render('joke.ejs', {'joke': jokes[Math.floor(Math.random()*jokes.length)]})
+app.get('/random-joke', function (req, res) {
+  res.render('joke.ejs', {'joke': jokes[Math.floor(Math.random() * jokes.length)]})
 })
 
 app.get('/cuteness', function (req, res) {
   res.render('cat.ejs', {})
 })
 
-app.get('*', function(req, res) {
-  res.render('404.ejs', {'url': req.url })
+app.get('*', function (req, res) {
+  res.render('404.ejs', {'url': req.url})
 })
 
-app.listen(app.get('port'), function() {
-    console.log('Node app is running on port', app.get('port'))
+app.listen(app.get('port'), function () {
+  console.log('Node app is running on port', app.get('port'))
 })

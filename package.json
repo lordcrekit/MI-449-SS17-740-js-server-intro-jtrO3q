@@ -7,6 +7,9 @@
   "author": "William Norman <lordcrekit@gmail.com>",
   "license": "GPL-3.0",
   "scripts": {
+    "lint:js": "standard *.js",
+    "lint:html": "ejslint views/*.ejs",
+    "lint": "run-s lint:*",
     "deploy": "git push heroku master"
   },
   "dependencies": {
@@ -15,5 +18,12 @@
   },
   "engines": {
     "node": "7.6.0"
+  },
+  "devDependencies": {
+    "ejs-lint": "^0.3.0",
+    "npm-run-all": "^4.0.2",
+    "standard": "^10.0.2",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0"
   }
 }
